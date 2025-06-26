@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Ajay Karre - Skills & Tools</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+  <style>
+    .skill-badge {
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+    .skill-badge:hover {
+      transform: scale(1.08) translateY(-2px);
+      box-shadow: 0 4px 16px rgba(59,130,246,0.15);
+      z-index: 2;
+    }
+    .section-card {
+      transition: box-shadow 0.2s, transform 0.2s;
+    }
+    .section-card:hover {
+      box-shadow: 0 8px 32px rgba(59,130,246,0.15);
+      transform: translateY(-2px) scale(1.01);
+    }
+  </style>
+</head>
+<body class="bg-gradient-to-br from-blue-50 to-blue-100 font-sans min-h-screen">
+
+  <!-- Navigation -->
+  <nav class="bg-gray-800 p-4 sticky top-0 z-50 shadow-md mb-8">
+    <div class="container mx-auto flex justify-between items-center">
+      <a href="index.html" class="text-white text-2xl font-bold tracking-wide">Ajay Karre</a>
+      <ul class="flex space-x-6">
+        <li><a href="index.html" class="text-white hover:text-blue-400 transition font-medium">About</a></li>
+        <li><a href="projects.html" class="text-white hover:text-blue-400 transition font-medium">Projects</a></li>
+        <li><a href="experience.html" class="text-white hover:text-blue-400 transition font-medium">Experience</a></li>
+        <li><a href="skills.html" class="text-white hover:text-blue-400 transition font-medium">Skills</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <section class="py-12">
+    <div class="container mx-auto px-4">
+      <h2 class="text-4xl font-extrabold text-center mb-10 text-blue-700 tracking-tight">Roles & Expertise</h2>
+      <div class="flex flex-wrap justify-center gap-3 text-sm mb-8">
+        <span class="bg-red-100 text-red-800 px-3 py-1 rounded skill-badge"><i class="fas fa-chart-line mr-1"></i>Data Analyst</span>
+        <span class="bg-red-100 text-red-800 px-3 py-1 rounded skill-badge"><i class="fas fa-database mr-1"></i>Data Engineer</span>
+        <span class="bg-red-100 text-red-800 px-3 py-1 rounded skill-badge"><i class="fas fa-robot mr-1"></i>ML & NLP Engineer</span>
+        <span class="bg-red-100 text-red-800 px-3 py-1 rounded skill-badge"><i class="fab fa-python mr-1"></i>Python Developer</span>
+        <span class="bg-red-100 text-red-800 px-3 py-1 rounded skill-badge"><i class="fas fa-layer-group mr-1"></i>Full Stack Developer (Python / MERN / MEAN)</span>
+        <span class="bg-red-100 text-red-800 px-3 py-1 rounded skill-badge"><i class="fas fa-database mr-1"></i>SQL Developer</span>
+        <span class="bg-red-100 text-red-800 px-3 py-1 rounded skill-badge"><i class="fab fa-php mr-1"></i>PHP Developer</span>
+        <span class="bg-red-100 text-red-800 px-3 py-1 rounded skill-badge"><i class="fas fa-vial mr-1"></i>Selenium Automation</span>
+        <span class="bg-red-100 text-red-800 px-3 py-1 rounded skill-badge"><i class="fas fa-brain mr-1"></i>Gen-AI Engineer</span>
+        <span class="bg-red-100 text-red-800 px-3 py-1 rounded skill-badge"><i class="fas fa-chart-bar mr-1"></i>Power BI Developer</span>
+        <span class="bg-red-100 text-red-800 px-3 py-1 rounded skill-badge"><i class="fab fa-aws mr-1"></i>AWS Engineer</span>
+        <span class="bg-red-100 text-red-800 px-3 py-1 rounded skill-badge"><i class="fas fa-cogs mr-1"></i>DevOps Engineer</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-8">
+    <div class="container mx-auto px-4 grid md:grid-cols-2 gap-8">
+      <div class="section-card bg-white rounded-2xl shadow-xl p-8">
+        <h2 class="text-2xl font-semibold mb-4 text-yellow-700 flex items-center"><i class="fas fa-desktop mr-2"></i>Frontend</h2>
+        <div class="flex flex-wrap gap-2">
+          <span class="bg-yellow-100 text-yellow-800 px-3 py-1 rounded skill-badge">HTML5</span>
+          <span class="bg-yellow-100 text-yellow-800 px-3 py-1 rounded skill-badge">CSS3</span>
+          <span class="bg-yellow-100 text-yellow-800 px-3 py-1 rounded skill-badge">JavaScript</span>
+          <span class="bg-yellow-100 text-yellow-800 px-3 py-1 rounded skill-badge">React.js</span>
+          <span class="bg-yellow-100 text-yellow-800 px-3 py-1 rounded skill-badge">Angular</span>
+          <span class="bg-yellow-100 text-yellow-800 px-3 py-1 rounded skill-badge">Bootstrap</span>
+        </div>
+      </div>
+      <div class="section-card bg-white rounded-2xl shadow-xl p-8">
+        <h2 class="text-2xl font-semibold mb-4 text-green-700 flex items-center"><i class="fas fa-server mr-2"></i>Backend & Databases</h2>
+        <div class="flex flex-wrap gap-2">
+          <span class="bg-green-100 text-green-800 px-3 py-1 rounded skill-badge">Node.js</span>
+          <span class="bg-green-100 text-green-800 px-3 py-1 rounded skill-badge">Express.js</span>
+          <span class="bg-green-100 text-green-800 px-3 py-1 rounded skill-badge">Django</span>
+          <span class="bg-green-100 text-green-800 px-3 py-1 rounded skill-badge">PHP</span>
+          <span class="bg-green-100 text-green-800 px-3 py-1 rounded skill-badge">MongoDB</span>
+        </div>
+      </div>
+      <div class="section-card bg-white rounded-2xl shadow-xl p-8">
+        <h2 class="text-2xl font-semibold mb-4 text-purple-700 flex items-center"><i class="fas fa-brain mr-2"></i>Data Science & Machine Learning</h2>
+        <div class="flex flex-wrap gap-2">
+          <span class="bg-purple-100 text-purple-800 px-3 py-1 rounded skill-badge">Python</span>
+          <span class="bg-purple-100 text-purple-800 px-3 py-1 rounded skill-badge">Pandas</span>
+          <span class="bg-purple-100 text-purple-800 px-3 py-1 rounded skill-badge">NumPy</span>
+          <span class="bg-purple-100 text-purple-800 px-3 py-1 rounded skill-badge">Matplotlib</span>
+          <span class="bg-purple-100 text-purple-800 px-3 py-1 rounded skill-badge">Seaborn</span>
+          <span class="bg-purple-100 text-purple-800 px-3 py-1 rounded skill-badge">Scikit-learn</span>
+          <span class="bg-purple-100 text-purple-800 px-3 py-1 rounded skill-badge">SQL</span>
+          <span class="bg-purple-100 text-purple-800 px-3 py-1 rounded skill-badge">Power BI</span>
+          <span class="bg-purple-100 text-purple-800 px-3 py-1 rounded skill-badge">Excel</span>
+          <span class="bg-purple-100 text-purple-800 px-3 py-1 rounded skill-badge">Machine Learning</span>
+          <span class="bg-purple-100 text-purple-800 px-3 py-1 rounded skill-badge">NLP</span>
+          <span class="bg-purple-100 text-purple-800 px-3 py-1 rounded skill-badge">Data Visualization</span>
+          <span class="bg-purple-100 text-purple-800 px-3 py-1 rounded skill-badge">Data Cleaning</span>
+          <span class="bg-purple-100 text-purple-800 px-3 py-1 rounded skill-badge">Statistical Analysis</span>
+        </div>
+      </div>
+      <div class="section-card bg-white rounded-2xl shadow-xl p-8">
+        <h2 class="text-2xl font-semibold mb-4 text-blue-700 flex items-center"><i class="fas fa-vial mr-2"></i>Testing & Automation</h2>
+        <div class="flex flex-wrap gap-2">
+          <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded skill-badge">Selenium</span>
+          <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded skill-badge">Postman</span>
+        </div>
+        <h2 class="text-2xl font-semibold mt-8 mb-4 text-indigo-700 flex items-center"><i class="fas fa-cloud mr-2"></i>DevOps & Cloud</h2>
+        <div class="flex flex-wrap gap-2">
+          <span class="bg-indigo-100 text-indigo-800 px-3 py-1 rounded skill-badge">Git</span>
+          <span class="bg-indigo-100 text-indigo-800 px-3 py-1 rounded skill-badge">GitHub</span>
+          <span class="bg-indigo-100 text-indigo-800 px-3 py-1 rounded skill-badge">Docker</span>
+          <span class="bg-indigo-100 text-indigo-800 px-3 py-1 rounded skill-badge">Kubernetes</span>
+          <span class="bg-indigo-100 text-indigo-800 px-3 py-1 rounded skill-badge">AWS</span>
+          <span class="bg-indigo-100 text-indigo-800 px-3 py-1 rounded skill-badge">Linux</span>
+        </div>
+        <h2 class="text-2xl font-semibold mt-8 mb-4 text-pink-700 flex items-center"><i class="fas fa-tools mr-2"></i>Tools & IDEs</h2>
+        <div class="flex flex-wrap gap-2">
+          <span class="bg-pink-100 text-pink-800 px-3 py-1 rounded skill-badge">VS Code</span>
+          <span class="bg-pink-100 text-pink-800 px-3 py-1 rounded skill-badge">Jupyter Notebook</span>
+          <span class="bg-pink-100 text-pink-800 px-3 py-1 rounded skill-badge">Google Colab</span>
+          <span class="bg-pink-100 text-pink-800 px-3 py-1 rounded skill-badge">PowerShell</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-gray-800 text-white p-4 mt-8">
+    <div class="container mx-auto text-center">
+      <p>Contact: Telangana, Hyderabad, India-500018<br>
+        <a href="mailto:karreajay37@gmail.com" class="text-blue-300">karreajay37@gmail.com</a><br>
+        <a href="tel:+918688195609" class="text-blue-300">+91 8688195609</a>
+      </p>
+      <div class="flex justify-center space-x-4 mt-2">
+        <a href="https://x.com/AKarre23786" class="text-gray-400 hover:text-white" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+        <a href="https://www.instagram.com/mr.ajay_ak47/" class="text-gray-400 hover:text-white" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+        <a href="https://www.linkedin.com/in/ajay-karre-737291268" class="text-gray-400 hover:text-white" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+        <a href="https://github.com/Ajaykarre563" class="text-gray-400 hover:text-white" aria-label="GitHub"><i class="fab fa-github"></i></a>
+      </div>
+    </div>
+  </footer>

@@ -1,173 +1,121 @@
-
-
-<!DOCTYPE HTML>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ajay Karre Portfolio</title>
-    <link rel="stylesheet" href="assets/css/main.css">
+    <title>Ajay Karre Portfolio - About</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-    <noscript>
-        <link rel="stylesheet" href="assets/css/noscript.css">
-    </noscript>
+    <style>
+        .about-card {
+            transition: all 0.3s ease-in-out;
+        }
+        .about-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        .fade-in {
+            animation: fadeIn 1s ease-in-out;
+        }
+    </style>
 </head>
-<body class="is-preload">
+<body class="bg-gray-100 font-sans">
 
-    <!-- Wrapper -->
-    <div id="wrapper" class="fade-in">
-
-        <!-- Intro -->
-        <div id="intro">
-            <h1>Ajay Karre Portfolio</h1>
-            <img src="Ajay.jpg" alt="Ajay Karre Portfolio" style="width:150px;height:150px;border-radius:50%;margin-bottom:20px;">
-            <p>Data Science and Data Analyst skilled in Python, SQL, Advanced Excel, Machine Learning, Gen-AI,NLP,Power BI,HTML,CSS and Javscript.</p>
-            <h3>Libraries</h3>
-            <p style="font-size: 16px; margin-top: 10px;">NumPy, Pandas, Matplotlib, Seaborn, Scikit-learn, OpenCV, NLTK</p>
-            <ul class="actions">
-                <li><a href="#header" class="button icon solid solo fa-arrow-down scrolly">Continue</a></li>
+    <!-- Navigation -->
+    <nav class="bg-gray-800 p-4 sticky top-0 z-50 shadow-md">
+        <div class="container mx-auto flex justify-between items-center">
+            <a href="index.html" class="text-white text-2xl font-bold">Ajay Karre</a>
+            <ul class="flex space-x-6">
+                <li><a href="index.html" class="text-white hover:text-blue-400 transition">About</a></li>
+                <li><a href="projects.html" class="text-white hover:text-blue-400 transition">Projects</a></li>
+                <li><a href="experience.html" class="text-white hover:text-blue-400 transition">Experience</a></li>
+                <li><a href="skills.html" class="text-white hover:text-blue-400 transition">Skills</a></li>
             </ul>
         </div>
+    </nav>
 
-        <!-- Header -->
-        <header id="header">
-            <a href="index.html" class="logo">Ajay Karre</a>
-        </header>
-
-        <!-- Nav -->
-        <nav id="nav">
-            <ul class="links">
-                <li class="active"><a href="index.html">Projects</a></li>
-            </ul>
-            <ul class="icons">
-                <li><a href="https://x.com/AKarre23786" class="icon brands alt fa-twitter"><span class="label">Twitter</span></a></li>
-                <li><a href="https://www.instagram.com/mr.ajay_ak47/" class="icon brands alt fa-instagram"><span class="label">Instagram</span></a></li>
-                <li><a href="https://www.linkedin.com/in/ajay-karre-737291268" class="icon brands alt fa-linkedin"><span class="label">LinkedIn</span></a></li>
-                <li><a href="https://github.com/Ajaykarre563" class="icon brands alt fa-github"><span class="label">GitHub</span></a></li>
-            </ul>
-        </nav>
-
-        <!-- Main -->
-        <div id="main">
-
-            <!-- Featured Post -->
-            <article class="post featured">
-                <header class="major">
-                    <h2><a href="#">Financial News Sentiment Analysis using NLP</a></h2>
-                    <p>In this project, we preprocessed financial news data and trained a model to classify sentiments as positive, negative, or neutral.</p>
-                </header>
-                <a href="#" class="image main"><img src="images/sentiment_Analysis.jpg" alt="Financial Sentiment"></a>
-                <ul class="actions special">
-                    <li><a href="https://github.com/Ajaykarre563/repo3/blob/main/FSA_Using_Tf_Idf_W2v_D2v_Glove_Bag_Of_Words_.ipynb" class="button large">View Project</a></li>
-                </ul>
-            </article>
-
-            <!-- Posts -->
-            <section class="posts">
-
-                <article>
-                    <header>
-                        <h2><a href="#">Glass Classification Model using RandomForestClassifier and GridSearchCV</a></h2>
-                    </header>
-                    <a href="#" class="image fit"><img src="images/GLASS1.jpg" alt="Glass Classification"></a>
-                    <p>This project explores relationships between glass compositions and types using data analysis and machine learning to predict glass types based on chemical properties.</p>
-                    <ul class="actions special">
-                        <li><a href="https://github.com/Ajaykarre563/repo3/blob/main/Glass_Classification_Model_using_RandomForestClassifier_and_GridSearchCV.ipynb" class="button">View Project</a></li>
-                    </ul>
-                </article>
-
-                <article>
-                    <header>
-                        <h2><a href="#">Optimizing Book Sales with Predictive Analytics and Recommendation Systems</a></h2>
-                    </header>
-                    <a href="#" class="image fit"><img src="images/book.jpg" alt="Book Sales"></a>
-                    <p>A book recommendation project focuses on using data analytics and machine learning techniques to suggest books tailored to individual user preferences, enhancing user satisfaction and boosting sales through personalized recommendations.</p>
-                    <ul class="actions special">
-                        <li><a href="https://github.com/Ajaykarre563/repo2/blob/main/Optimizing_Book_Sales_with_Predictive_Analytics_%26_Recommendation_Systems.ipynb" class="button">View Project</a></li>
-                    </ul>
-                </article>
-
-                <article>
-                    <header>
-                        <h2><a href="#">Predicting Bitcoin Prices with Advanced Machine Learning Techniques</a></h2>
-                    </header>
-                    <a href="#" class="image fit"><img src="images/stock forcasting.jpg" alt="Bitcoin Prices"></a>
-                    <p>In this project, we analyzed historical bitcoin price data and applied machine learning techniques to forecast future stock prices, involving preprocessing time-series data and training predictive models.</p>
-                    <ul class="actions special">
-                        <li><a href="https://github.com/Ajaykarre563/repo2/blob/main/Predicting_Bitcoin_Prices_with_Advanced_Machine_Learning_Techniques.ipynb" class="button">View Project</a></li>
-                    </ul>
-                </article>
-
-                <article>
-                    <header>
-                        <h2><a href="#">Customer Satisfaction Dashboard using Advanced Excel</a></h2>
-                    </header>
-                    <a href="#" class="image fit"><img src="images/sales insights.png" alt="Customer Satisfaction"></a>
-                    <p>This project involves creating a Customer Satisfaction Dashboard using Advanced Excel, featuring pivot tables, conditional formatting, charts, and slicers for interactive data analysis.</p>
-                    <ul class="actions special">
-                        <li><a href="https://github.com/Ajaykarre563/repo2/blob/main/Ajay_karre_Excel_project%204.xlsx" class="button">View Project</a></li>
-                    </ul>
-                </article>
-
-                <article>
-                    <header>
-                        <h2><a href="#">Blinkit Sales Insights Data Analysis Project</a></h2>
-                    </header>
-                    <a href="#" class="image fit"><img src="images/BLINKIT.png" alt="Blinkit Sales"></a>
-                    <p>This project includes a comprehensive sales data analysis using MySQL, SQL, and Power BI, generating insights into metrics like Total Sales,Avg sales, No fo items are sales, and Avg rating trends, visualized through an interactive dashboard.</p>
-                    <ul class="actions special">
-                        <li><a href="https://github.com/Ajaykarre563/repo6/blob/main/blinkit_Data_dashboard.pdf" class="button">View Project</a></li>
-                    </ul>
-                </article>
-
-            </section>
+    <!-- Hero Section -->
+    <section class="bg-gradient-to-r from-blue-100 to-blue-300 py-16">
+        <div class="container mx-auto flex flex-col md:flex-row items-center justify-center">
+            <img src="Ajay.jpg" alt="Ajay Karre" class="w-40 h-40 rounded-full shadow-lg border-4 border-white mx-auto md:mx-0 md:mr-10 mb-6 md:mb-0 hover:scale-105 transition-transform duration-300">
+            <div class="text-center md:text-left">
+                <h1 class="text-4xl font-extrabold text-gray-800 mb-2">Ajay Karre</h1>
+                <p class="text-xl text-gray-700 mb-4">Associate Software Engineer | Full Stack Developer | Data Scientist | DevOps Enthusiast</p>
+                <div class="flex justify-center md:justify-start space-x-4 mb-4">
+                    <a href="https://www.linkedin.com/in/ajay-karre-737291268" class="text-blue-700 hover:text-blue-900 text-2xl transition"><i class="fab fa-linkedin"></i></a>
+                    <a href="https://github.com/Ajaykarre563" class="text-gray-800 hover:text-black text-2xl transition"><i class="fab fa-github"></i></a>
+                    <a href="https://x.com/AKarre23786" class="text-blue-500 hover:text-blue-700 text-2xl transition"><i class="fab fa-twitter"></i></a>
+                    <a href="https://www.instagram.com/mr.ajay_ak47/" class="text-pink-500 hover:text-pink-700 text-2xl transition"><i class="fab fa-instagram"></i></a>
+                </div>
+                <a href="mailto:karreajay37@gmail.com" class="inline-block bg-blue-600 text-white px-6 py-2 rounded-full font-semibold shadow hover:bg-blue-700 transition transform hover:scale-105">Contact Me</a>
+            </div>
         </div>
-
-        <!-- Footer Section -->
-<footer>
-    <section class="split contact">
-        <!-- Address, Phone, and Email in a single line -->
-        <section style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 10px;">
-            <div style="color: #4CAF50; margin-right: 10px;"><strong>Address:</strong> Telangana, Hyderabad, India-500018</div>
-            <div style="color: #FF6347; margin-right: 10px;"><strong>Phone:</strong> <a href="tel:+918688195609" style="color: inherit;">+91 8688195609</a></div>
-            <div style="color: #1E90FF;"><strong>Email:</strong> <a href="mailto:karreajay37@gmail.com" style="color: inherit;">karreajay37@gmail.com</a></div>
-        </section>
-    </section>
-    
-
-       <!-- Social Accounts in a single centered line -->
-        <section style="text-align: center; margin-top: 20px;">
-            <h3>Social</h3>
-            <ul class="icons alt" style="list-style-type: none; padding: 0; display: flex; justify-content: center; gap: 20px;">
-                <li><a href="https://x.com/AKarre23786" class="icon brands alt fa-twitter" style="color: #1DA1F2; font-size: 1.5em;"><span class="label">Twitter</span></a></li>
-                <li><a href="https://www.instagram.com/mr.ajay_ak47/" class="icon brands alt fa-instagram" style="color: #E4405F; font-size: 1.5em;"><span class="label">Instagram</span></a></li>
-                <li><a href="https://www.linkedin.com/in/ajay-karre-737291268" class="icon brands alt fa-linkedin" style="color: #0077B5; font-size: 1.5em;"><span class="label">LinkedIn</span></a></li>
-                <li><a href="https://github.com/Ajaykarre563" class="icon brands alt fa-github" style="color: #ded2d2; font-size: 1.5em;"><span class="label">GitHub</span></a></li>
-            </ul>
-        </section>
-
-
-
-       <!-- Resume Section -->
-        <section>
-            <p style="color: rgb(19, 164, 208);">Download my resume to know more about my skills and experience.</p>
-            <a href="Ajay_Karre70.pdf" class="button icon solid fa-download" download 
-            style="background-color: #4CAF50; color: white; padding: 10px 20px; text-decoration: none; border-radius: 5px; display: inline-block; font-weight: bold;">
-            Download Resume
-        </a>
     </section>
 
+    <!-- About Section -->
+    <section class="py-16 bg-white">
+        <div class="container mx-auto max-w-3xl">
+            <h2 class="text-3xl font-bold mb-6 text-center fade-in">About Me</h2>
+            <div class="about-card bg-gray-50 rounded-xl shadow-lg p-8 fade-in">
+                <p class="text-gray-700 mb-4">
+                    I’m a passionate <span class="text-blue-700">Computer Science Engineering graduate</span> from 
+                    <span class="text-purple-700">Marri Laxman Reddy Institute of Technology & Management (2024)</span>, with a CGPA of 
+                    <span class="text-pink-600">8.26</span>. I specialize in building full-stack applications, analyzing data, and deploying solutions using 
+                    <span class="text-green-600">modern DevOps tools</span>.
+                </p>
+               <p class="text-gray-700 mb-4">
+                I work with technologies like 
+                <span class="text-blue-700">Python</span>, 
+                <span class="text-yellow-700">JavaScript</span>, 
+                <span class="text-indigo-700">PHP</span>, and frameworks like 
+                <span class="text-blue-700">React</span> and 
+                <span class="text-gray-700">Flask</span>. I'm skilled in using 
+                <span class="text-green-700">SQL</span>, 
+                <span class="text-yellow-700">Power BI</span>, and 
+                <span class="text-orange-600">AWS</span> to deliver scalable, cloud-based solutions. I also use 
+                <span class="text-purple-700">Pandas</span>, 
+                <span class="text-pink-700">NumPy</span>, and 
+                <span class="text-green-700">Scikit-learn</span> for data science and machine learning projects.
+                </p>
 
+                <p class="text-gray-700 mb-4">
+                    During my remote internship at <span class="text-blue-700">Accenture</span>, I worked as a 
+                    <span class="text-green-700">Data Analyst</span>, using social media data to uncover trends and improve digital content strategies. I’ve completed a hands-on 
+                    <span class="text-purple-700">Data Science course</span> that helped me master 
+                    <span class="text-blue-700">Machine Learning</span>, 
+                    <span class="text-pink-700">NLP</span>, and 
+                    <span class="text-yellow-700">Data Visualization</span>.
+                </p>
+                <p class="text-gray-700">
+                    I’m currently exploring the world of <span class="text-pink-700">Generative AI</span> and deepening my expertise in 
+                    <span class="text-indigo-700">DevOps</span>. I bring a 
+                    <span class="text-green-700">positive attitude</span>, strong 
+                    <span class="text-blue-700">team collaboration skills</span>, and a love for 
+                    <span class="text-purple-700">learning new technologies</span>. I’m excited to work on innovative projects and grow as a 
+                    <span class="text-orange-600">technology professional</span>.
+                </p>
+            </div>
+        </div>
+    </section>
 
-
-    <!-- Scripts -->
-    <script src="assets/js/jquery.min.js"></script>
-    <script src="assets/js/jquery.scrollex.min.js"></script>   
-    <script src="assets/js/jquery.scrolly.min.js"></script>
-    <script src="assets/js/browser.min.js"></script>
-    <script src="assets/js/breakpoints.min.js"></script>
-    <script src="assets/js/util.js"></script>
-    <script src="assets/js/main.js"></script>
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white p-4 mt-8">
+        <div class="container mx-auto text-center">
+            <p>Contact: Telangana, Hyderabad, India-500018<br>
+                <a href="mailto:karreajay37@gmail.com" class="text-blue-300">karreajay37@gmail.com</a><br>
+                <a href="tel:+918688195609" class="text-blue-300">+91 8688195609</a></p>
+            <div class="flex justify-center space-x-4 mt-2">
+                <a href="https://x.com/AKarre23786" class="text-gray-400 hover:text-white"><i class="fab fa-twitter"></i></a>
+                <a href="https://www.instagram.com/mr.ajay_ak47/" class="text-gray-400 hover:text-white"><i class="fab fa-instagram"></i></a>
+                <a href="https://www.linkedin.com/in/ajay-karre-737291268" class="text-gray-400 hover:text-white"><i class="fab fa-linkedin"></i></a>
+                <a href="https://github.com/Ajaykarre563" class="text-gray-400 hover:text-white"><i class="fab fa-github"></i></a>
+            </div>
+        </div>
+    </footer>
 
 </body>
 </html>
