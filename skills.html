@@ -8,24 +8,134 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
   <style>
     .skill-badge {
-      transition: transform 0.2s, box-shadow 0.2s;
+      transition: transform 0.3s, box-shadow 0.3s;
+      position: relative;
+      cursor: pointer;
+      overflow: visible;
+      box-shadow: 0 2px 8px rgba(59,130,246,0.06);
+      font-weight: 500;
+      font-size: 1rem;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.3rem;
     }
     .skill-badge:hover {
-      transform: scale(1.08) translateY(-2px);
-      box-shadow: 0 4px 16px rgba(59,130,246,0.15);
-      z-index: 2;
+      transform: scale(1.13) translateY(-6px) rotate(-2deg);
+      box-shadow: 0 8px 32px rgba(59,130,246,0.18);
+      z-index: 20;
+      background: linear-gradient(90deg, #f0abfc 0%, #dbeafe 100%);
+      color: #1e293b !important;
+    }
+    .role-badge {
+      background: #fee2e2;
+      color: #b91c1c;
+      font-weight: 500;
+      font-size: 1rem;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.3rem;
+      padding: 0.4rem 1rem;
+      border-radius: 0.5rem;
+      margin: 0.3rem;
+      transition: background 0.2s, color 0.2s, transform 0.2s;
+    }
+    .role-badge i {
+      margin-right: 0.3rem;
+    }
+    .role-badge:hover {
+      background: #fca5a5;
+      color: #7f1d1d;
+      transform: scale(1.07) translateY(-3px);
     }
     .section-card {
-      transition: box-shadow 0.2s, transform 0.2s;
+      transition: box-shadow 0.3s, transform 0.3s;
+      background: #fff;
+      background-image: linear-gradient(120deg, #fff 80%, #f0abfc 100%);
+      border-radius: 1.25rem;
+      box-shadow: 0 2px 8px rgba(59,130,246,0.06);
+      margin-bottom: 1.5rem;
     }
     .section-card:hover {
-      box-shadow: 0 8px 32px rgba(59,130,246,0.15);
-      transform: translateY(-2px) scale(1.01);
+      box-shadow: 0 12px 48px rgba(59,130,246,0.18);
+      transform: translateY(-6px) scale(1.025);
+      border: 1.5px solid #a5b4fc;
+    }
+    .job-role-card {
+      background: linear-gradient(120deg, #dbeafe 60%, #f0abfc 100%);
+      border-radius: 1.25rem;
+      box-shadow: 0 4px 24px rgba(59,130,246,0.10);
+      padding: 2rem 1.5rem;
+      margin-bottom: 1.5rem;
+      transition: box-shadow 0.3s, transform 0.3s;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .job-role-card:hover {
+      box-shadow: 0 12px 48px rgba(168,85,247,0.18);
+      transform: translateY(-6px) scale(1.025);
+      border: 1.5px solid #a5b4fc;
+      background: linear-gradient(120deg, #f0abfc 60%, #dbeafe 100%);
+    }
+    .job-role-icon {
+      font-size: 2.2rem;
+      margin-bottom: 0.5rem;
+      color: #6366f1;
+      background: #fff;
+      border-radius: 50%;
+      padding: 0.5rem 0.7rem;
+      box-shadow: 0 2px 8px rgba(59,130,246,0.08);
+      display: inline-block;
+    }
+    .fade-in {
+      opacity: 0;
+      transition: opacity 1s;
+    }
+    .fade-in.visible {
+      opacity: 1;
+    }
+    .skills-section-title {
+      font-size: 2rem;
+      font-weight: 700;
+      margin-bottom: 1.2rem;
+      color: #1e293b;
+      letter-spacing: -0.02em;
+      display: flex;
+      align-items: center;
+      gap: 0.7rem;
+    }
+    .skills-category {
+      margin-bottom: 2.5rem;
+    }
+    .skills-badges-group {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.7rem;
+    }
+    @media (max-width: 768px) {
+      .job-role-card { padding: 1.2rem 0.7rem; }
+      .skills-section-title { font-size: 1.3rem; }
     }
   </style>
+  <script>
+    // Fade-in animation for section cards
+    document.addEventListener('DOMContentLoaded', function() {
+      const faders = document.querySelectorAll('.fade-in');
+      const appearOptions = { threshold: 0.2, rootMargin: "0px 0px -50px 0px" };
+      const appearOnScroll = new IntersectionObserver(function(entries, observer) {
+        entries.forEach(entry => {
+          if (!entry.isIntersecting) return;
+          entry.target.classList.add('visible');
+          observer.unobserve(entry.target);
+        });
+      }, appearOptions);
+      faders.forEach(fader => {
+        appearOnScroll.observe(fader);
+      });
+    });
+  </script>
 </head>
 <body class="bg-gradient-to-br from-blue-50 to-blue-100 font-sans min-h-screen">
-
   <!-- Navigation -->
   <nav class="bg-gray-800 p-4 sticky top-0 z-50 shadow-md mb-8">
     <div class="container mx-auto flex justify-between items-center">
@@ -39,89 +149,94 @@
     </div>
   </nav>
 
-  <section class="py-12">
-    <div class="container mx-auto px-4">
-      <h2 class="text-4xl font-extrabold text-center mb-10 text-blue-700 tracking-tight">Roles & Expertise</h2>
-      <div class="flex flex-wrap justify-center gap-3 text-sm mb-8">
-        <span class="bg-red-100 text-red-800 px-3 py-1 rounded skill-badge"><i class="fas fa-chart-line mr-1"></i>Data Analyst</span>
-        <span class="bg-red-100 text-red-800 px-3 py-1 rounded skill-badge"><i class="fas fa-database mr-1"></i>Data Engineer</span>
-        <span class="bg-red-100 text-red-800 px-3 py-1 rounded skill-badge"><i class="fas fa-robot mr-1"></i>ML & NLP Engineer</span>
-        <span class="bg-red-100 text-red-800 px-3 py-1 rounded skill-badge"><i class="fab fa-python mr-1"></i>Python Developer</span>
-        <span class="bg-red-100 text-red-800 px-3 py-1 rounded skill-badge"><i class="fas fa-layer-group mr-1"></i>Full Stack Developer (Python / MERN / MEAN)</span>
-        <span class="bg-red-100 text-red-800 px-3 py-1 rounded skill-badge"><i class="fas fa-database mr-1"></i>SQL Developer</span>
-        <span class="bg-red-100 text-red-800 px-3 py-1 rounded skill-badge"><i class="fab fa-php mr-1"></i>PHP Developer</span>
-        <span class="bg-red-100 text-red-800 px-3 py-1 rounded skill-badge"><i class="fas fa-vial mr-1"></i>Selenium Automation</span>
-        <span class="bg-red-100 text-red-800 px-3 py-1 rounded skill-badge"><i class="fas fa-brain mr-1"></i>Gen-AI Engineer</span>
-        <span class="bg-red-100 text-red-800 px-3 py-1 rounded skill-badge"><i class="fas fa-chart-bar mr-1"></i>Power BI Developer</span>
-        <span class="bg-red-100 text-red-800 px-3 py-1 rounded skill-badge"><i class="fab fa-aws mr-1"></i>AWS Engineer</span>
-        <span class="bg-red-100 text-red-800 px-3 py-1 rounded skill-badge"><i class="fas fa-cogs mr-1"></i>DevOps Engineer</span>
-      </div>
+  <!-- Roles & Expertise Badges Section -->
+  <section class="container mx-auto px-4 pt-8 pb-2">
+    <h2 class="text-4xl font-extrabold text-center mb-6 text-blue-700 tracking-tight fade-in">Roles & Expertise</h2>
+    <div class="flex flex-wrap justify-center items-center mb-8">
+      <span class="role-badge"><i class="fas fa-chart-line"></i>Data Analyst</span>
+      <span class="role-badge"><i class="fas fa-database"></i>Data Engineer</span>
+      <span class="role-badge"><i class="fas fa-robot"></i>ML & NLP Engineer</span>
+      <span class="role-badge"><i class="fab fa-python"></i>Python Developer</span>
+      <span class="role-badge"><i class="fas fa-layer-group"></i>Full Stack Developer (Python / MERN / MEAN)</span>
+      <span class="role-badge"><i class="fas fa-database"></i>SQL Developer</span>
+      <span class="role-badge"><i class="fab fa-php"></i>PHP Developer</span>
+      <span class="role-badge"><i class="fas fa-vial"></i>Selenium Automation</span>
+      <span class="role-badge"><i class="fas fa-brain"></i>Gen-AI Engineer</span>
+      <span class="role-badge"><i class="fas fa-chart-bar"></i>Power BI Developer</span>
+      <span class="role-badge"><i class="fab fa-aws"></i>AWS Engineer</span>
+      <span class="role-badge"><i class="fas fa-cogs"></i>DevOps Engineer</span>
+      <span class="role-badge"><i class="fas fa-globe-americas"></i>US-IT Recruiter</span>
+      <span class="role-badge"><i class="fas fa-file-code"></i>EDI</span>
+      <span class="role-badge"><i class="fas fa-concierge-bell"></i>ServiceNow Developer</span>
+      <span class="role-badge"><i class="fas fa-exchange-alt"></i>Managed File Transfer</span>
+      <span class="role-badge"><i class="fas fa-user-tie"></i>End to End IT Recruitment</span>
     </div>
   </section>
 
-  <section class="py-8">
-    <div class="container mx-auto px-4 grid md:grid-cols-2 gap-8">
-      <div class="section-card bg-white rounded-2xl shadow-xl p-8">
-        <h2 class="text-2xl font-semibold mb-4 text-yellow-700 flex items-center"><i class="fas fa-desktop mr-2"></i>Frontend</h2>
-        <div class="flex flex-wrap gap-2">
-          <span class="bg-yellow-100 text-yellow-800 px-3 py-1 rounded skill-badge">HTML5</span>
-          <span class="bg-yellow-100 text-yellow-800 px-3 py-1 rounded skill-badge">CSS3</span>
-          <span class="bg-yellow-100 text-yellow-800 px-3 py-1 rounded skill-badge">JavaScript</span>
-          <span class="bg-yellow-100 text-yellow-800 px-3 py-1 rounded skill-badge">React.js</span>
-          <span class="bg-yellow-100 text-yellow-800 px-3 py-1 rounded skill-badge">Angular</span>
-          <span class="bg-yellow-100 text-yellow-800 px-3 py-1 rounded skill-badge">Bootstrap</span>
+
+  <!-- Skills Section -->
+  <section class="container mx-auto px-4 py-8">
+    <h2 class="text-3xl font-bold text-center mb-10 text-blue-700 tracking-tight fade-in">Skills</h2>
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
+      <!-- Frontend -->
+      <div class="skills-category">
+        <div class="skills-section-title text-yellow-700"><i class="fas fa-desktop"></i>Frontend</div>
+        <div class="skills-badges-group">
+          <span class="bg-yellow-100 text-yellow-800 px-4 py-2 rounded skill-badge">HTML5</span>
+          <span class="bg-yellow-100 text-yellow-800 px-4 py-2 rounded skill-badge">CSS3</span>
+          <span class="bg-yellow-100 text-yellow-800 px-4 py-2 rounded skill-badge">JavaScript</span>
+          <span class="bg-yellow-100 text-yellow-800 px-4 py-2 rounded skill-badge">React.js</span>
+          <span class="bg-yellow-100 text-yellow-800 px-4 py-2 rounded skill-badge">Angular</span>
+          <span class="bg-yellow-100 text-yellow-800 px-4 py-2 rounded skill-badge">Bootstrap</span>
         </div>
       </div>
-      <div class="section-card bg-white rounded-2xl shadow-xl p-8">
-        <h2 class="text-2xl font-semibold mb-4 text-green-700 flex items-center"><i class="fas fa-server mr-2"></i>Backend & Databases</h2>
-        <div class="flex flex-wrap gap-2">
-          <span class="bg-green-100 text-green-800 px-3 py-1 rounded skill-badge">Node.js</span>
-          <span class="bg-green-100 text-green-800 px-3 py-1 rounded skill-badge">Express.js</span>
-          <span class="bg-green-100 text-green-800 px-3 py-1 rounded skill-badge">Django</span>
-          <span class="bg-green-100 text-green-800 px-3 py-1 rounded skill-badge">PHP</span>
-          <span class="bg-green-100 text-green-800 px-3 py-1 rounded skill-badge">MongoDB</span>
+      <!-- Backend -->
+      <div class="skills-category">
+        <div class="skills-section-title text-green-700"><i class="fas fa-server"></i>Backend</div>
+        <div class="skills-badges-group">
+          <span class="bg-green-100 text-green-800 px-4 py-2 rounded skill-badge">Node.js</span>
+          <span class="bg-green-100 text-green-800 px-4 py-2 rounded skill-badge">Express.js</span>
+          <span class="bg-green-100 text-green-800 px-4 py-2 rounded skill-badge">Django</span>
+          <span class="bg-green-100 text-green-800 px-4 py-2 rounded skill-badge">PHP</span>
         </div>
       </div>
-      <div class="section-card bg-white rounded-2xl shadow-xl p-8">
-        <h2 class="text-2xl font-semibold mb-4 text-purple-700 flex items-center"><i class="fas fa-brain mr-2"></i>Data Science & Machine Learning</h2>
-        <div class="flex flex-wrap gap-2">
-          <span class="bg-purple-100 text-purple-800 px-3 py-1 rounded skill-badge">Python</span>
-          <span class="bg-purple-100 text-purple-800 px-3 py-1 rounded skill-badge">Pandas</span>
-          <span class="bg-purple-100 text-purple-800 px-3 py-1 rounded skill-badge">NumPy</span>
-          <span class="bg-purple-100 text-purple-800 px-3 py-1 rounded skill-badge">Matplotlib</span>
-          <span class="bg-purple-100 text-purple-800 px-3 py-1 rounded skill-badge">Seaborn</span>
-          <span class="bg-purple-100 text-purple-800 px-3 py-1 rounded skill-badge">Scikit-learn</span>
-          <span class="bg-purple-100 text-purple-800 px-3 py-1 rounded skill-badge">SQL</span>
-          <span class="bg-purple-100 text-purple-800 px-3 py-1 rounded skill-badge">Power BI</span>
-          <span class="bg-purple-100 text-purple-800 px-3 py-1 rounded skill-badge">Excel</span>
-          <span class="bg-purple-100 text-purple-800 px-3 py-1 rounded skill-badge">Machine Learning</span>
-          <span class="bg-purple-100 text-purple-800 px-3 py-1 rounded skill-badge">NLP</span>
-          <span class="bg-purple-100 text-purple-800 px-3 py-1 rounded skill-badge">Data Visualization</span>
-          <span class="bg-purple-100 text-purple-800 px-3 py-1 rounded skill-badge">Data Cleaning</span>
-          <span class="bg-purple-100 text-purple-800 px-3 py-1 rounded skill-badge">Statistical Analysis</span>
+      <!-- Database -->
+      <div class="skills-category">
+        <div class="skills-section-title text-purple-700"><i class="fas fa-database"></i>Database</div>
+        <div class="skills-badges-group">
+          <span class="bg-purple-100 text-purple-800 px-4 py-2 rounded skill-badge">MongoDB</span>
+          <span class="bg-purple-100 text-purple-800 px-4 py-2 rounded skill-badge">SQL</span>
+          <span class="bg-purple-100 text-purple-800 px-4 py-2 rounded skill-badge">Power BI</span>
+          <span class="bg-purple-100 text-purple-800 px-4 py-2 rounded skill-badge">Excel</span>
         </div>
       </div>
-      <div class="section-card bg-white rounded-2xl shadow-xl p-8">
-        <h2 class="text-2xl font-semibold mb-4 text-blue-700 flex items-center"><i class="fas fa-vial mr-2"></i>Testing & Automation</h2>
-        <div class="flex flex-wrap gap-2">
-          <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded skill-badge">Selenium</span>
-          <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded skill-badge">Postman</span>
+      <!-- AWS & DevOps -->
+      <div class="skills-category">
+        <div class="skills-section-title text-indigo-700"><i class="fas fa-cloud"></i>AWS & DevOps</div>
+        <div class="skills-badges-group">
+          <span class="bg-indigo-100 text-indigo-800 px-4 py-2 rounded skill-badge">AWS</span>
+          <span class="bg-indigo-100 text-indigo-800 px-4 py-2 rounded skill-badge">Git</span>
+          <span class="bg-indigo-100 text-indigo-800 px-4 py-2 rounded skill-badge">GitHub</span>
+          <span class="bg-indigo-100 text-indigo-800 px-4 py-2 rounded skill-badge">Docker</span>
+          <span class="bg-indigo-100 text-indigo-800 px-4 py-2 rounded skill-badge">Kubernetes</span>
+          <span class="bg-indigo-100 text-indigo-800 px-4 py-2 rounded skill-badge">Linux</span>
         </div>
-        <h2 class="text-2xl font-semibold mt-8 mb-4 text-indigo-700 flex items-center"><i class="fas fa-cloud mr-2"></i>DevOps & Cloud</h2>
-        <div class="flex flex-wrap gap-2">
-          <span class="bg-indigo-100 text-indigo-800 px-3 py-1 rounded skill-badge">Git</span>
-          <span class="bg-indigo-100 text-indigo-800 px-3 py-1 rounded skill-badge">GitHub</span>
-          <span class="bg-indigo-100 text-indigo-800 px-3 py-1 rounded skill-badge">Docker</span>
-          <span class="bg-indigo-100 text-indigo-800 px-3 py-1 rounded skill-badge">Kubernetes</span>
-          <span class="bg-indigo-100 text-indigo-800 px-3 py-1 rounded skill-badge">AWS</span>
-          <span class="bg-indigo-100 text-indigo-800 px-3 py-1 rounded skill-badge">Linux</span>
+      </div>
+      <!-- Recruitment -->
+      <div class="skills-category">
+        <div class="skills-section-title text-green-700"><i class="fas fa-user-tie"></i>Recruitment</div>
+        <div class="skills-badges-group">
+          <span class="bg-green-100 text-green-800 px-4 py-2 rounded skill-badge"><i class="fas fa-globe-americas mr-1"></i>US-IT Recruiter</span>
+          <span class="bg-pink-100 text-pink-800 px-4 py-2 rounded skill-badge"><i class="fas fa-user-tie mr-1"></i>End to End IT Recruitment</span>
         </div>
-        <h2 class="text-2xl font-semibold mt-8 mb-4 text-pink-700 flex items-center"><i class="fas fa-tools mr-2"></i>Tools & IDEs</h2>
-        <div class="flex flex-wrap gap-2">
-          <span class="bg-pink-100 text-pink-800 px-3 py-1 rounded skill-badge">VS Code</span>
-          <span class="bg-pink-100 text-pink-800 px-3 py-1 rounded skill-badge">Jupyter Notebook</span>
-          <span class="bg-pink-100 text-pink-800 px-3 py-1 rounded skill-badge">Google Colab</span>
-          <span class="bg-pink-100 text-pink-800 px-3 py-1 rounded skill-badge">PowerShell</span>
+      </div>
+      <!-- Other Skills -->
+      <div class="skills-category">
+        <div class="skills-section-title text-blue-700"><i class="fas fa-cogs"></i>Other Skills</div>
+        <div class="skills-badges-group">
+          <span class="bg-green-100 text-green-800 px-4 py-2 rounded skill-badge"><i class="fas fa-exchange-alt mr-1"></i>Managed File Transfer</span>
+          <span class="bg-purple-100 text-purple-800 px-4 py-2 rounded skill-badge"><i class="fas fa-file-code mr-1"></i>EDI</span>
+          <span class="bg-blue-100 text-blue-800 px-4 py-2 rounded skill-badge"><i class="fas fa-concierge-bell mr-1"></i>ServiceNow Developer</span>
         </div>
       </div>
     </div>
@@ -142,3 +257,4 @@
       </div>
     </div>
   </footer>
+</body>
