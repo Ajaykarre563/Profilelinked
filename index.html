@@ -9,10 +9,11 @@
     <style>
         .about-card {
             transition: all 0.3s ease-in-out;
+            background: linear-gradient(120deg, #f0f9ff 60%, #f0abfc11 100%);
         }
         .about-card:hover {
             transform: translateY(-5px) scale(1.03);
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+            box-shadow: 0 10px 30px rgba(59,130,246,0.15);
         }
         @keyframes fadeIn {
             from { opacity: 0; }
@@ -56,6 +57,14 @@
             background: linear-gradient(120deg, #f0abfc 0%, #dbeafe 100%);
             clip-path: polygon(0 0, 100% 100%, 0 100%);
         }
+        .highlight {
+            background: linear-gradient(90deg, #f0abfc33 60%, #dbeafe33 100%);
+            border-radius: 0.5rem;
+            padding: 0.1rem 0.5rem;
+        }
+        .section-title {
+            letter-spacing: 0.05em;
+        }
     </style>
     <script>
         document.addEventListener('DOMContentLoaded', function() {
@@ -75,7 +84,7 @@
         });
     </script>
 </head>
-<body class="bg-gray-100 font-sans">
+<body class="bg-gradient-to-br from-blue-50 via-purple-50 to-pink-50 font-sans">
 
     <!-- Navigation -->
     <nav class="bg-gray-800 p-4 sticky top-0 z-50 shadow-md">
@@ -94,17 +103,17 @@
     <section class="slice-section relative py-16">
         <div class="slice-bg"></div>
         <div class="slice-content container mx-auto flex flex-col md:flex-row items-center justify-center">
-            <img src="Ajay.jpg" alt="Ajay Karre" class="w-40 h-40 rounded-full shadow-lg border-4 border-white mx-auto md:mx-0 md:mr-10 mb-6 md:mb-0 hover:scale-110 transition-transform duration-300 ring-4 ring-blue-200">
+            <img src="Ajay.jpg" alt="Ajay Karre" class="w-44 h-44 rounded-full shadow-lg border-4 border-white mx-auto md:mx-0 md:mr-10 mb-6 md:mb-0 hover:scale-110 transition-transform duration-300 ring-4 ring-blue-200">
             <div class="text-center md:text-left">
-                <h1 class="text-4xl font-extrabold text-gray-800 mb-2 fade-in">Ajay Karre</h1>
-                <p class="text-xl text-gray-700 mb-4 fade-in">Associate Software Engineer | Full Stack Developer | Data Scientist | DevOps Enthusiast</p>
+                <h1 class="text-5xl font-extrabold text-gray-800 mb-2 fade-in section-title">Ajay Karre</h1>
+                <p class="text-2xl text-gray-700 mb-4 fade-in">Associate Software Engineer <span class="mx-2 text-blue-400">|</span> Full Stack Developer <span class="mx-2 text-blue-400">|</span> Data Scientist <span class="mx-2 text-blue-400">|</span> DevOps Enthusiast</p>
                 <div class="flex justify-center md:justify-start space-x-4 mb-4">
                     <a href="https://www.linkedin.com/in/ajay-karre-737291268" class="text-blue-700 hover:text-blue-900 text-2xl transition glow" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
                     <a href="https://github.com/Ajaykarre563" class="text-gray-800 hover:text-black text-2xl transition glow" aria-label="GitHub"><i class="fab fa-github"></i></a>
                     <a href="https://x.com/AKarre23786" class="text-blue-500 hover:text-blue-700 text-2xl transition glow" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
                     <a href="https://www.instagram.com/mr.ajay_ak47/" class="text-pink-500 hover:text-pink-700 text-2xl transition glow" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
                 </div>
-                <a href="mailto:karreajay37@gmail.com" class="inline-block bg-blue-600 text-white px-6 py-2 rounded-full font-semibold shadow hover:bg-blue-700 transition transform hover:scale-105 pulse">Contact Me</a>
+                <a href="mailto:karreajay37@gmail.com" class="inline-block bg-gradient-to-r from-blue-600 to-purple-500 text-white px-8 py-3 rounded-full font-semibold shadow hover:from-blue-700 hover:to-purple-600 transition transform hover:scale-105 pulse">Contact Me</a>
             </div>
         </div>
     </section>
@@ -116,26 +125,26 @@
     <section class="slice-section relative py-16 bg-white">
         <div class="slice-bg" style="background: linear-gradient(120deg, #f0abfc 60%, #dbeafe 100%); opacity:0.15;"></div>
         <div class="slice-content container mx-auto max-w-3xl">
-            <h2 class="text-3xl font-bold mb-6 text-center fade-in">About Me</h2>
-            <div class="about-card bg-gray-50 rounded-xl shadow-lg p-8 fade-in">
-                <p class="text-gray-700 mb-4">
-                    I’m a passionate <span class="text-blue-700">Computer Science Engineering graduate</span> from 
-                    <span class="text-purple-700">Marri Laxman Reddy Institute of Technology &amp; Management (2024)</span>, with a CGPA of 
-                    <span class="text-pink-600">8.26</span>. I specialize in building full-stack applications, analyzing data, automating IT workflows, and deploying cloud-based solutions using <span class="text-green-600">modern DevOps tools</span>.
+            <h2 class="text-4xl font-bold mb-8 text-center fade-in section-title">About Me</h2>
+            <div class="about-card rounded-xl shadow-lg p-10 fade-in">
+                <p class="text-gray-700 mb-6 text-lg md:text-xl leading-relaxed">
+                    I’m a passionate <span class="text-blue-700 font-semibold">Computer Science Engineering graduate</span> from 
+                    <span class="text-purple-700 font-semibold">Marri Laxman Reddy Institute of Technology &amp; Management (2024)</span>, with a CGPA of 
+                    <span class="text-pink-600 font-semibold">8.26</span>. I specialize in building full-stack applications, analyzing data, automating IT workflows, and deploying cloud-based solutions using <span class="text-green-600 font-semibold">modern DevOps tools</span>.
                 </p>
-                <p class="text-gray-700 mb-4">
-                 <span class="text-blue-700">Arohak Technologies Pvt Ltd</span>, where I have gained practical experience in Web Development, Managed File Transfer (MFT), Electronic Data Interchange (EDI), ServiceNow, and Python. My responsibilities include secure system integrations, automating file transfers, and improving IT service management through automation and scripting.
-                <p class="text-gray-700 mb-4">
+                <p class="text-gray-700 mb-6 text-lg md:text-xl leading-relaxed">
+                    <span class="text-blue-700 font-semibold">Arohak Technologies Pvt Ltd</span>, where I’ve gained hands-on experience with enterprise-level tools and technologies such as Web Development, Python, Managed File Transfer (MFT), Electronic Data Interchange (EDI), and ServiceNow. My work focuses on secure system integrations, automating file transfers, and enhancing IT service management through automation and optimization.
+                </p>
+                <p class="text-gray-700 mb-6 text-lg md:text-xl leading-relaxed">
                     My technical expertise covers a broad range of technologies. On the frontend, I’m skilled in HTML5, CSS3, JavaScript, React.js, Angular, and Bootstrap. On the backend, I’ve worked with Python, Node.js, Express.js, Django, and PHP. My database experience includes SQL, MongoDB, Excel, and Power BI. In the area of Cloud and DevOps, I’m familiar with AWS, Git, GitHub, Docker, Kubernetes, Linux, Jenkins, and Terraform. I also have experience with testing tools like Selenium and Postman. Additionally, I’ve worked in areas such as Data Science, Machine Learning, NLP, Data Visualization, US-IT Recruitment, and End-to-End Hiring Processes.
                 </p>
-                <p class="text-gray-700 mb-4">
-                    I’m proficient in Python-based data workflows using libraries such as Pandas, NumPy, and Scikit-learn, and I’ve built several machine learning projects focused on solving real-world problems. During my remote internship at <span class="text-blue-700">Accenture</span>, I worked as a Data Analyst, where I analyzed social media data to uncover trends and improve digital content strategies.
+                <p class="text-gray-700 mb-6 text-lg md:text-xl leading-relaxed">
+                    I’m proficient in Python-based data workflows using libraries such as Pandas, NumPy, and Scikit-learn, and I’ve built several machine learning projects focused on solving real-world problems. During my remote internship at <span class="text-blue-700 font-semibold">Accenture</span>, I worked as a Data Analyst, where I analyzed social media data to uncover trends and improve digital content strategies.
                 </p>
-                <p class="text-gray-700 mb-4">
-                    Currently, I’m exploring the world of <span class="text-pink-700">Generative AI</span>, expanding my expertise in <span class="text-indigo-700">DevOps</span>, and continuously learning new and emerging technologies. I bring a <span class="text-green-700">positive attitude</span>, strong <span class="text-blue-700">collaboration skills</span>, and a passion for building scalable, impactful technology solutions.
+                <p class="text-gray-700 mb-8 text-lg md:text-xl leading-relaxed">
+                    Currently, I’m exploring the world of <span class="text-pink-700 font-semibold">Generative AI</span>, expanding my expertise in <span class="text-indigo-700 font-semibold">DevOps</span>, and continuously learning new and emerging technologies. I bring a <span class="text-green-700 font-semibold">positive attitude</span>, strong <span class="text-blue-700 font-semibold">collaboration skills</span>, and a passion for building scalable, impactful technology solutions.
                 </p>
-             
-               
+            </div>
         </div>
     </section>
 
@@ -152,3 +161,6 @@
                 <a href="https://github.com/Ajaykarre563" class="text-gray-400 hover:text-white glow" aria-label="GitHub"><i class="fab fa-github"></i></a>
             </div>
         </div>
+    </footer>
+</body>
+</html>
